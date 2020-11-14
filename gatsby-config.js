@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'LS Wellness - Lisa Strzdoda',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'help those with autoimmune disease "navigate a new normal" in their lives. It can be overwhelming when you are first diagnosed, but it isn\'t the end of the world.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -74,4 +74,4 @@ module.exports = {
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
-}
+};
