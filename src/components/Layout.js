@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Header from './Header';
 import Announcement from '../components/announcement';
 import './all.scss';
 import '../sass/main.scss';
@@ -54,7 +54,7 @@ const TemplateWrapper = ({ children }) => {
         announcement="Check out Lisa's Fit Healthy 30-Day Jump Start!"
         link='https://www.subscribepage.com/fit-healthy-30'
       />
-      <Navbar />
+      <Header />
       <div>{children}</div>
       <Footer />
     </div>

@@ -1,133 +1,145 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import Layout from '../components/Layout';
+import Features from '../components/Features';
+import BlogRoll from '../components/BlogRoll';
+import Mailchimp from '../components/Mailchimp';
+
+import LogoBg from '../img/logo-bg.png';
+import ContactBg from '../img/home-schedule-appointment.jpg';
 
 export const IndexPageTemplate = ({
   image,
   title,
   heading,
   subheading,
+  ctaButton,
+  profileImage,
   mainpitch,
   description,
   intro,
 }) => (
-  <div>
+  <div className='indexPage'>
     <div
-      className="full-width-image margin-top-0"
+      className='indexPage__hero'
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `center center`,
         backgroundAttachment: `fixed`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
+      <div className='indexPage__hero--box'>
+        <div className='indexPage__hero--box-heading'>{heading}</div>
+        <div className='indexPage__hero--box-subheading'>{subheading}</div>
+        <Link className='indexPage__hero--box-cta' to={ctaButton.link}>
+          {ctaButton.text}
+        </Link>
       </div>
     </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section
+      className='indexPage__meet-lisa'
+      style={{
+        backgroundImage: `url(${
+          !!profileImage.childImageSharp
+            ? profileImage.childImageSharp.fluid.src
+            : profileImage
+        })`,
+        backgroundPosition: `left center`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
+      <div className='indexPage__meet-lisa--gradient'></div>
+      <div className='indexPage__meet-lisa--content'>
+        <div className='content-container'>
+          <h1 className='title'>{mainpitch.title}</h1>
+          <p>{mainpitch.description}</p>
+          <p>{description}</p>
+          <Link className='link' to='/my-story'>
+            my story
+          </Link>
         </div>
       </div>
     </section>
+    <section
+      className='indexPage__programs'
+      style={{
+        backgroundImage: `url(${LogoBg})`,
+        backgroundPosition: `-250px -400px`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '800px',
+      }}
+    >
+      <Features gridItems={intro.blurbs} />
+    </section>
+    <section
+      className='indexPage__contact'
+      style={{
+        background: `linear-gradient(rgba(236,28,45,.75),rgba(236,28,45,.75)), url(${ContactBg})`,
+        backgroundPosition: `top center`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
+      <div className='indexPage__contact--schedule'>
+        <h3 className='title'>Schedule an Appointment</h3>
+        <p className='content'>
+          Book a 30 minute Discovery Sessions and see if my program is right for
+          you!
+        </p>
+        <a
+          href='https://calendly.com/lisa-strzoda'
+          target='__blank'
+          className='btn'
+        >
+          schedule free session
+        </a>
+      </div>
+      <div className='indexPage__contact--question'>
+        <h3 className='title'>Have a Question?</h3>
+        <p className='content'>
+          I would be happy to help! Click the button below and fill out the
+          form. I will send you a response via email shortly.
+        </p>
+        <Link className='btn' to='/contact'>
+          ask a question
+        </Link>
+      </div>
+    </section>
+    <section className='indexPage__blogRoll'>
+      <h2 className='indexPage__blogRoll--title'>Latest Posts</h2>
+      <BlogRoll />
+    </section>
+    <section className='indexPage__mailChimp'>
+      <div className='form-box'>
+        <Mailchimp />
+      </div>
+    </section>
   </div>
-)
+);
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  ctaButton: PropTypes.object,
+  profileImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -136,13 +148,15 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        ctaButton={frontmatter.ctaButton}
+        profileImage={frontmatter.profileImage}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -150,9 +164,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -168,6 +182,17 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        ctaButton {
+          text
+          link
+        }
+        profileImage {
+          childImageSharp {
+            fluid(maxWidth: 1000, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         mainpitch {
           title
           description
@@ -175,14 +200,10 @@ export const pageQuery = graphql`
         description
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            title
             text
+            btnText
+            btnLink
           }
           heading
           description
@@ -190,4 +211,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

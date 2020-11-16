@@ -1,28 +1,159 @@
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-    to right bottom,
-    rgba($color-primary-light, 0.8),
-    rgba($color-primary-dark, 0.8)
-  );
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  &__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
+#header {
+  .top-nav {
+    padding: 0px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @media screen and (max-width: 1120px) {
+      display: none;
+    }
+    .telephone {
+      font-weight: 700;
+      padding: 5px 0;
+      margin-right: 10px;
+      text-decoration: none;
+      color: $color-grey-dark-3;
+      transition: all 0.1s ease-in;
+      &:hover {
+        color: $color-tertiary-light;
+      }
+    }
+    .fbook {
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin-right: 10px;
+    }
+    .btn-discovery {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: $color-tertiary;
+      line-height: 1.25;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      padding: 1rem 1.5rem;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: $color-tertiary-dark;
+      }
+    }
   }
-  &__logo {
-    height: 3.5rem;
-  }
-  &__cta-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  .navbar {
+    background-color: $color-white;
+    .container {
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      @media screen and (max-width: 1120px) {
+        flex-wrap: wrap;
+      }
+      .navbar-brand {
+        margin-top: -80px;
+        margin-bottom: -54px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 1120px) {
+          width: 100%;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          justify-content: space-between;
+        }
+        .navbar-burger {
+          display: none;
+          color: #4a4a4a;
+          cursor: pointer;
+          height: 3.25rem;
+          position: relative;
+          width: 3.25rem;
+          margin-left: auto;
+          @media screen and (max-width: 1120px) {
+            display: block;
+          }
+          span {
+            background-color: currentColor;
+            display: block;
+            height: 1px;
+            left: calc(50% - 8px);
+            position: absolute;
+            transform-origin: center;
+            transition-duration: 86ms;
+            transition-property: background-color, opacity, transform;
+            transition-timing-function: ease-out;
+            width: 16px;
+            &:first-child {
+              top: calc(50% - 6px);
+            }
+            &:nth-child(2) {
+              top: calc(50% - 1px);
+            }
+            &:nth-child(3) {
+              top: calc(50% + 4px);
+            }
+          }
+          &.is-active {
+            span {
+              &:first-child {
+                transform: translateY(5px) rotate(45deg);
+              }
+              &:nth-child(2) {
+                opacity: 0;
+              }
+              &:nth-child(3) {
+                transform: translateY(-5px) rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+      .navbar-menu {
+        &.is-active {
+          position: absolute;
+          right: 0px;
+          top: 150px;
+          background-color: #fff;
+          padding: 1rem 2rem;
+          .navbar-nav {
+            @media screen and (max-width: 1120px) {
+              display: block;
+            }
+          }
+        }
+        .navbar-nav {
+          font-size: 2rem;
+          text-transform: uppercase;
+          letter-spacing: 0.2rem;
+          transition: all 0.3s ease-in-out;
+          @media screen and (max-width: 1220px) {
+            font-size: 1.8rem;
+            letter-spacing: 0.1rem;
+          }
+          @media screen and (max-width: 1120px) {
+            display: none;
+          }
+          .navbar-item {
+            color: $color-grey-dark-3;
+            display: inline-block;
+            padding: 0 2rem;
+            text-decoration: none;
+            border-right: 2px solid $color-tertiary;
+            transition: all 0.2s ease-in;
+            @media screen and (max-width: 1120px) {
+              display: block;
+              padding: 1rem 2rem;
+            }
+            &__active {
+              color: $color-tertiary-dark;
+            }
+            &:hover {
+              color: $color-tertiary-dark;
+            }
+          }
+        }
+      }
+    }
   }
 }
