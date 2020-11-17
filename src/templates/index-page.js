@@ -9,6 +9,7 @@ import Mailchimp from '../components/Mailchimp';
 
 import LogoBg from '../img/logo-bg.png';
 import ContactBg from '../img/home-schedule-appointment.jpg';
+import SignupBg from '../img/home-sign-up.jpg';
 
 export const IndexPageTemplate = ({
   image,
@@ -42,20 +43,22 @@ export const IndexPageTemplate = ({
         </Link>
       </div>
     </div>
-    <section
-      className='indexPage__meet-lisa'
-      style={{
-        backgroundImage: `url(${
-          !!profileImage.childImageSharp
-            ? profileImage.childImageSharp.fluid.src
-            : profileImage
-        })`,
-        backgroundPosition: `left center`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-      }}
-    >
-      <div className='indexPage__meet-lisa--gradient'></div>
+    <section className='indexPage__meet-lisa'>
+      <div
+        className='indexPage__meet-lisa--gradient'
+        style={{
+          backgroundImage: `url(${
+            !!profileImage.childImageSharp
+              ? profileImage.childImageSharp.fluid.src
+              : profileImage
+          })`,
+          backgroundPosition: `left center`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className='gradient-inner'></div>
+      </div>
       <div className='indexPage__meet-lisa--content'>
         <div className='content-container'>
           <h1 className='title'>{mainpitch.title}</h1>
@@ -116,8 +119,20 @@ export const IndexPageTemplate = ({
       <h2 className='indexPage__blogRoll--title'>Latest Posts</h2>
       <BlogRoll />
     </section>
-    <section className='indexPage__mailChimp'>
+    <section
+      className='indexPage__mailChimp'
+      style={{
+        backgroundImage: `url(${SignupBg})`,
+        backgroundPosition: `center center`,
+        backgroundAttachment: `fixed`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
       <div className='form-box'>
+        <h3 className='form-box__title'>
+          Sign up for my newsletter and receive 5 free recipes!
+        </h3>
         <Mailchimp />
       </div>
     </section>

@@ -10,7 +10,7 @@
     font-size: 1.6rem;
     font-family: inherit;
     color: inherit;
-    padding: 1.5rem 2rem;
+    padding: 1rem;
     border-radius: 2px;
     background-color: $color-white;
     border: none;
@@ -21,7 +21,7 @@
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-      border-bottom: 3px solid $color-primary;
+      border-bottom: 3px solid $color-tertiary;
     }
     &:focus:invalid {
       border-bottom: 3px solid $color-secondary-light;
@@ -34,7 +34,7 @@
 
   &__label {
     font-size: 1.8rem;
-    font-weight: 700;
+    text-transform: uppercase;
     margin-right: 2rem;
     display: block;
     transition: all 0.3s;

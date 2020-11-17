@@ -49,6 +49,7 @@
       justify-content: space-between;
       @media screen and (max-width: 1120px) {
         flex-wrap: wrap;
+        padding: 1rem 3rem;
       }
       .navbar-brand {
         margin-top: -80px;
@@ -76,51 +77,53 @@
           span {
             background-color: currentColor;
             display: block;
-            height: 1px;
-            left: calc(50% - 8px);
+            height: 2px;
+            left: 0;
             position: absolute;
             transform-origin: center;
             transition-duration: 86ms;
             transition-property: background-color, opacity, transform;
             transition-timing-function: ease-out;
-            width: 16px;
+            width: 2.5rem;
             &:first-child {
-              top: calc(50% - 6px);
+              top: calc(50% - 8px);
             }
             &:nth-child(2) {
-              top: calc(50% - 1px);
+              top: 50%;
             }
             &:nth-child(3) {
-              top: calc(50% + 4px);
+              top: calc(50% + 8px);
             }
           }
           &.is-active {
             span {
               &:first-child {
                 transform: translateY(5px) rotate(45deg);
+                top: calc(50% - 6px);
               }
               &:nth-child(2) {
                 opacity: 0;
               }
               &:nth-child(3) {
                 transform: translateY(-5px) rotate(-45deg);
+                top: calc(50% + 4px);
               }
             }
           }
         }
       }
       .navbar-menu {
-        &.is-active {
+        transition: all 0.3s ease-in-out;
+        @media screen and (max-width: 1120px) {
+          transform: translateX(400px);
           position: absolute;
           right: 0px;
           top: 150px;
+        }
+        &.is-active {
           background-color: #fff;
           padding: 1rem 2rem;
-          .navbar-nav {
-            @media screen and (max-width: 1120px) {
-              display: block;
-            }
-          }
+          transform: translateX(0);
         }
         .navbar-nav {
           font-size: 2rem;
@@ -130,9 +133,6 @@
           @media screen and (max-width: 1220px) {
             font-size: 1.8rem;
             letter-spacing: 0.1rem;
-          }
-          @media screen and (max-width: 1120px) {
-            display: none;
           }
           .navbar-item {
             color: $color-grey-dark-3;
