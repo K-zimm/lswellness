@@ -12,22 +12,20 @@ import ContactBg from '../img/home-schedule-appointment.jpg';
 import SignupBg from '../img/home-sign-up.jpg';
 
 export const IndexPageTemplate = ({
-  image,
   title,
-  heading,
-  subheading,
-  ctaButton,
+  heroSection,
   profileImage,
   mainpitch,
-  description,
-  intro,
+  programs,
 }) => (
   <div className='indexPage'>
     <div
       className='indexPage__hero'
       style={{
         backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          !!heroSection.image.childImageSharp
+            ? heroSection.image.childImageSharp.fluid.src
+            : heroSection.image
         })`,
         backgroundPosition: `center center`,
         backgroundAttachment: `fixed`,
@@ -36,10 +34,17 @@ export const IndexPageTemplate = ({
       }}
     >
       <div className='indexPage__hero--box'>
-        <div className='indexPage__hero--box-heading'>{heading}</div>
-        <div className='indexPage__hero--box-subheading'>{subheading}</div>
-        <Link className='indexPage__hero--box-cta' to={ctaButton.link}>
-          {ctaButton.text}
+        <div className='indexPage__hero--box-heading'>
+          {heroSection.heading}
+        </div>
+        <div className='indexPage__hero--box-subheading'>
+          {heroSection.subheading}
+        </div>
+        <Link
+          className='indexPage__hero--box-cta'
+          to={heroSection.ctaButton.link}
+        >
+          {heroSection.ctaButton.text}
         </Link>
       </div>
     </div>
@@ -63,7 +68,6 @@ export const IndexPageTemplate = ({
         <div className='content-container'>
           <h1 className='title'>{mainpitch.title}</h1>
           <p>{mainpitch.description}</p>
-          <p>{description}</p>
           <Link className='link' to='/my-story'>
             my story
           </Link>
@@ -79,7 +83,7 @@ export const IndexPageTemplate = ({
         backgroundSize: '800px',
       }}
     >
-      <Features gridItems={intro.blurbs} />
+      <Features gridItems={programs.programs} />
     </section>
     <section
       className='indexPage__contact'
@@ -140,16 +144,13 @@ export const IndexPageTemplate = ({
 );
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  ctaButton: PropTypes.object,
+  heroSection: PropTypes.shape({
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  }),
   profileImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+  programs: PropTypes.shape({
+    programs: PropTypes.array,
   }),
 };
 
@@ -159,15 +160,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        ctaButton={frontmatter.ctaButton}
+        heroSection={frontmatter.heroSection}
         profileImage={frontmatter.profileImage}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        programs={frontmatter.programs}
       />
     </Layout>
   );
@@ -188,18 +184,20 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        heroSection {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
-        }
-        heading
-        subheading
-        ctaButton {
-          text
-          link
+          heading
+          subheading
+          ctaButton {
+            text
+            link
+          }
         }
         profileImage {
           childImageSharp {
@@ -212,16 +210,13 @@ export const pageQuery = graphql`
           title
           description
         }
-        description
-        intro {
-          blurbs {
+        programs {
+          programs {
             title
             text
             btnText
             btnLink
           }
-          heading
-          description
         }
       }
     }

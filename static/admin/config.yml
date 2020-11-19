@@ -46,17 +46,25 @@ collections:
               default: 'index-page',
             }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
           - {
-              label: CTA Button,
-              name: ctaButton,
+              label: Hero Section,
+              name: heroSection,
               widget: object,
               fields:
                 [
-                  { label: Text, name: text, widget: string },
-                  { label: Link, name: link, widget: string },
+                  { label: Background Image, name: image, widget: image },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Subheading, name: subheading, widget: string },
+                  {
+                    label: CTA Button,
+                    name: ctaButton,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Text, name: text, widget: string },
+                        { label: Link, name: link, widget: string },
+                      ],
+                  },
                 ],
             }
           - { label: Profile Image, name: progileImage, widget: image }
@@ -70,18 +78,15 @@ collections:
                   { label: Description, name: description, widget: text },
                 ],
             }
-          - { label: Description, name: description, widget: string }
           - {
-              label: Intro,
-              name: intro,
+              label: Programs,
+              name: programs,
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
                   {
-                    label: Blurbs,
-                    name: blurbs,
+                    label: Programs,
+                    name: programs,
                     widget: list,
                     fields:
                       [
