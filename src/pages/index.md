@@ -9,7 +9,6 @@ heroSection:
     text: Learn More
     link: /work-with-me
 profileImage: /img/home-about.jpg
-progileImage: /img/home-about.jpg
 mainpitch:
   title: Meet Lisa
   description: >

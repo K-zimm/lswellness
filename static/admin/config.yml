@@ -67,7 +67,7 @@ collections:
                   },
                 ],
             }
-          - { label: Profile Image, name: progileImage, widget: image }
+          - { label: Profile Image, name: profileImage, widget: image }
           - {
               label: Mainpitch,
               name: mainpitch,
