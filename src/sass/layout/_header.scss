@@ -115,15 +115,17 @@
       .navbar-menu {
         transition: all 0.3s ease-in-out;
         @media screen and (max-width: 1120px) {
-          transform: translateX(400px);
           position: absolute;
           right: 0px;
           top: 150px;
+          visibility: hidden;
+          opacity: 0;
         }
         &.is-active {
           background-color: #fff;
           padding: 1rem 2rem;
-          transform: translateX(0);
+          visibility: visible;
+          opacity: 1;
         }
         .navbar-nav {
           font-size: 2rem;
