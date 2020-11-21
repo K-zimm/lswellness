@@ -10,6 +10,8 @@ featuredimage: /img/we-make-plans.png
 tags:
   - story
 ---
+![Don't deny your grief](/img/we-make-plans.png "Don't deny your grief")
+
 *Practice the pause. Think for a brief minute what is going on around you. Is it what it seems? Pause. - “The Love Adventure”*
 
 This quote from “The Love Adventure” reminds us to pause because we are usually in the whirlwind of life. Now the whole world is in a pause. That is remarkable when you think about it. There aren’t many things that could affect the whole world this way. Everyone is at a standstill. It is as if God put his thumb on the earth and stopped its rotation. 
