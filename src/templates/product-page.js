@@ -1,97 +1,128 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import Testimonials from '../components/Testimonials';
-import Pricing from '../components/Pricing';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import Mailchimp from '../components/Mailchimp';
+
+import LogoBg from '../img/logo-bg.png';
+import ContactBg from '../img/home-schedule-appointment.jpg';
 
 export const ProductPageTemplate = ({
   image,
   title,
-  heading,
-  description,
-  intro,
-  main,
+  heading1,
+  content1,
+  heading2,
+  content2,
+  products,
+  cta,
   testimonials,
-  fullImage,
-  pricing,
 }) => (
-  <div className='content'>
+  <div className='productPage'>
     <div
-      className='full-width-image-container margin-top-0'
+      className='productPage__hero'
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      <h2
-        className='has-text-weight-bold is-size-1'
+      <h1
+        className='hero-title'
         style={{
-          boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-          backgroundColor: '#f40',
+          boxShadow: '0.5rem 0 0 #20bedc, -0.5rem 0 0 #20bedc',
+          backgroundColor: '#20bedc',
           color: 'white',
           padding: '1rem',
         }}
       >
         {title}
-      </h2>
+      </h1>
     </div>
-    <section className='section section--gradient'>
-      <div className='container'>
-        <div className='section'>
-          <div className='columns'>
-            <div className='column is-7 is-offset-1'>
-              <h3 className='has-text-weight-semibold is-size-2'>{heading}</h3>
-              <p>{description}</p>
+    <div
+      style={{
+        backgroundImage: `url(${LogoBg})`,
+        backgroundPosition: `bottom -200px left -250px`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '800px',
+        paddingBottom: '5rem',
+      }}
+    >
+      <section className='productPage__content'>
+        <h2 className='heading-2'>{heading1}</h2>
+        <div className='content'>{content1}</div>
+        <h2 className='heading-2'>{heading2}</h2>
+        <div className='content'>{content2}</div>
+      </section>
+      <section className='productPage__programs'>
+        {products.map((item, index) => (
+          <div key={item.text} className='programs__row' id={`program${index}`}>
+            <h2 className='programs__row--title'>{item.title}</h2>
+            <div className='programs__row--content'>
+              <p>{item.text}</p>
+              <ul className='program-features'>
+                {item.features
+                  ? item.features.map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))
+                  : ''}
+              </ul>
             </div>
           </div>
-          <div className='columns'>
-            <div className='column is-10 is-offset-1'>
-              <div className='columns'>
-                <div className='column is-7'>
-                  <h3 className='has-text-weight-semibold is-size-3'>
-                    {main.heading}
-                  </h3>
-                  <p>{main.description}</p>
-                </div>
-              </div>
-              <div className='tile is-ancestor'>
-                <div className='tile is-vertical'>
-                  <div className='tile'>
-                    <div className='tile is-parent is-vertical'>
-                      <article className='tile is-child'></article>
-                    </div>
-                    <div className='tile is-parent'>
-                      <article className='tile is-child'></article>
-                    </div>
-                  </div>
-                  <div className='tile is-parent'>
-                    <article className='tile is-child'></article>
-                  </div>
-                </div>
-              </div>
-              <Testimonials testimonials={testimonials} />
-              <div
-                className='full-width-image-container'
-                style={{
-                  backgroundImage: `url(${
-                    fullImage.childImageSharp
-                      ? fullImage.childImageSharp.fluid.src
-                      : fullImage
-                  })`,
-                }}
-              />
-              <h2 className='has-text-weight-semibold is-size-2'>
-                {pricing.heading}
-              </h2>
-              <p className='is-size-5'>{pricing.description}</p>
-              <Pricing data={pricing.plans} />
-            </div>
-          </div>
-        </div>
+        ))}
+      </section>
+      <section className='productPage__cta'>
+        <h3>{cta.heading}</h3>
+        <div className='content'>{cta.description}</div>
+        <a href={cta.btnLink} target='_blank' className='btn' rel='noreferrer'>
+          {cta.btnText}
+        </a>
+      </section>
+    </div>
+    <section
+      className='productPage__contact'
+      style={{
+        background: `linear-gradient(rgba(236,28,45,.75),rgba(236,28,45,.75)), url(${ContactBg})`,
+        backgroundPosition: `top center`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
+    >
+      <div className='productPage__contact--schedule'>
+        <h3 className='title'>Schedule an Appointment</h3>
+        <p className='content'>
+          Book a 30 minute Discovery Sessions and see if my program is right for
+          you!
+        </p>
+        <a
+          href='https://calendly.com/lisa-strzoda'
+          target='__blank'
+          className='btn'
+          rel='noreferrer'
+        >
+          schedule free session
+        </a>
+      </div>
+      <div className='productPage__contact--question'>
+        <h3 className='title'>Have a Question?</h3>
+        <p className='content'>
+          I would be happy to help! Click the button below and fill out the
+          form. I will send you a response via email shortly.
+        </p>
+        <Link className='btn' to='/contact'>
+          ask a question
+        </Link>
+      </div>
+    </section>
+    <section className='mailchimp-horizontal'>
+      <div className='form-box'>
+        <h3 className='form-box__title'>
+          Sign up for my newsletter and receive 5 free recipes!
+        </h3>
+        <Mailchimp />
       </div>
     </section>
   </div>
@@ -100,24 +131,16 @@ export const ProductPageTemplate = ({
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  main: PropTypes.shape({
+  heading1: PropTypes.string,
+  content1: PropTypes.string,
+  heading2: PropTypes.string,
+  content2: PropTypes.string,
+  products: PropTypes.array,
+  cta: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  }),
-  testimonials: PropTypes.array,
-  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  pricing: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    plans: PropTypes.array,
+    btnText: PropTypes.string,
+    btnLink: PropTypes.string,
   }),
 };
 
@@ -129,13 +152,12 @@ const ProductPage = ({ data }) => {
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-        main={frontmatter.main}
-        testimonials={frontmatter.testimonials}
-        fullImage={frontmatter.full_image}
-        pricing={frontmatter.pricing}
+        heading1={frontmatter.heading1}
+        content1={frontmatter.content1}
+        heading2={frontmatter.heading2}
+        content2={frontmatter.content2}
+        products={frontmatter.products}
+        cta={frontmatter.cta}
       />
     </Layout>
   );
@@ -163,39 +185,20 @@ export const productPageQuery = graphql`
             }
           }
         }
-        heading
-        description
-        intro {
-          blurbs {
-            text
-          }
+        heading1
+        content1
+        heading2
+        content2
+        products {
+          title
+          text
+          features
+        }
+        cta {
           heading
           description
-        }
-        main {
-          heading
-          description
-        }
-        testimonials {
-          author
-          quote
-        }
-        full_image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        pricing {
-          heading
-          description
-          plans {
-            description
-            items
-            plan
-            price
-          }
+          btnText
+          btnLink
         }
       }
     }

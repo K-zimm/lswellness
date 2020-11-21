@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Features from '../components/Features';
-import BlogRoll from '../components/BlogRoll';
+import BlogRollFeatured from '../components/BlogRollFeatured';
 import Mailchimp from '../components/Mailchimp';
 
 import LogoBg from '../img/logo-bg.png';
@@ -67,7 +67,8 @@ export const IndexPageTemplate = ({
       <div className='indexPage__meet-lisa--content'>
         <div className='content-container'>
           <h1 className='title'>{mainpitch.title}</h1>
-          <p>{mainpitch.description}</p>
+          <p>{mainpitch.paragraph1}</p>
+          <p>{mainpitch.paragraph2}</p>
           <Link className='link' to='/my-story'>
             my story
           </Link>
@@ -121,7 +122,7 @@ export const IndexPageTemplate = ({
     </section>
     <section className='indexPage__blogRoll'>
       <h2 className='indexPage__blogRoll--title'>Latest Posts</h2>
-      <BlogRoll />
+      <BlogRollFeatured />
     </section>
     <section
       className='indexPage__mailChimp'
@@ -208,7 +209,8 @@ export const pageQuery = graphql`
         }
         mainpitch {
           title
-          description
+          paragraph1
+          paragraph2
         }
         programs {
           programs {

@@ -89,14 +89,14 @@ const Navbar = class extends React.Component {
                 <Link
                   className='navbar-item'
                   activeClassName='navbar-item__active'
-                  to='/about'
+                  to='/my-story'
                 >
                   My Story
                 </Link>
                 <Link
                   className='navbar-item'
                   activeClassName='navbar-item__active'
-                  to='/products'
+                  to='/work-with-me'
                 >
                   Work With Me
                 </Link>
@@ -112,12 +112,14 @@ const Navbar = class extends React.Component {
                   activeClassName='navbar-item__active'
                   to='/blog'
                 >
-                  News & Events
+                  Blog
                 </Link>
                 <Link
                   className='navbar-item'
                   activeClassName='navbar-item__active'
-                  to='/contact/examples'
+                  to='https://lswellness.vimtoday.com/'
+                  target='_blank'
+                  rel='noreferrer'
                 >
                   Order VIM
                 </Link>

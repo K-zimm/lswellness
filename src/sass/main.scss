@@ -17,9 +17,14 @@
 @import 'components/form';
 @import 'components/popup';
 @import 'components/story';
+@import 'components/mailchimp';
 // LAYOUT
 @import 'layout/footer';
 @import 'layout/grid';
 @import 'layout/header';
 // PAGES
 @import 'pages/home';
+@import 'pages/my-story';
+@import 'pages/work-with-me';
+@import 'pages/contact';
+@import 'pages/blog.scss';

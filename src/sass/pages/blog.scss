@@ -1,0 +1,16 @@
+.blogPage {
+  &__hero {
+    min-height: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    .hero-title {
+      font-size: 42px;
+      font-weight: 400;
+    }
+  }
+  &__container {
+    padding: 5rem 10%;
+  }
+}
