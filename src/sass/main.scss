@@ -8,8 +8,10 @@
 @import 'base/typography';
 @import 'base/utilities';
 // COMPONENTS
+@import 'components/announcement';
 @import 'components/bg-video';
 @import 'components/blogroll';
+@import 'components/podcastroll';
 @import 'components/button';
 @import 'components/card';
 @import 'components/composition';
@@ -28,3 +30,4 @@
 @import 'pages/work-with-me';
 @import 'pages/contact';
 @import 'pages/blog.scss';
+@import 'pages/blogPost.scss';

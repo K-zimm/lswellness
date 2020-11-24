@@ -1,0 +1,11 @@
+.announcement {
+  padding: 1rem 3rem;
+  background-color: $color-secondary-light;
+  a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: $color-white;
+    text-align: center;
+  }
+}

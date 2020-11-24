@@ -1,0 +1,40 @@
+.blogPost {
+  padding: 5rem 10%;
+  &__title {
+    font-size: 4.2rem;
+    font-weight: 400;
+    color: $color-primary;
+    margin-bottom: 3rem;
+  }
+  p {
+    margin-bottom: 1.5rem;
+  }
+  h4.tag-title {
+    font-size: 2.8rem;
+    color: $color-tertiary;
+    margin-bottom: 1.5rem;
+  }
+  ul li {
+    list-style: none;
+    display: inline-block;
+    border-radius: 1rem;
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      color: $color-white;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    &:nth-child(1n) {
+      background-color: $color-primary;
+    }
+    &:nth-child(2n) {
+      background-color: $color-secondary-light;
+    }
+    &:nth-child(3n) {
+      background-color: $color-tertiary;
+    }
+  }
+}

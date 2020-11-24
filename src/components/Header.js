@@ -117,12 +117,19 @@ const Navbar = class extends React.Component {
                 <Link
                   className='navbar-item'
                   activeClassName='navbar-item__active'
-                  to='https://lswellness.vimtoday.com/'
+                  to='/podcast'
+                >
+                  Podcast
+                </Link>
+                <a
+                  className='navbar-item'
+                  activeClassName='navbar-item__active'
+                  href='https://lswellness.vimtoday.com/'
                   target='_blank'
                   rel='noreferrer'
                 >
                   Order VIM
-                </Link>
+                </a>
               </div>
             </div>
           </div>

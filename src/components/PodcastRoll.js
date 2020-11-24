@@ -3,45 +3,26 @@ import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
+import Content, { HTMLContent } from '../components/Content';
+
 class PodcastRoll extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className='blogroll'>
+      <div className='podcastroll'>
         {posts &&
           posts.map(({ node: post }) => (
-            <div className='blog-post' key={post.id}>
-              <article
-                className={`blog-post__inner ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className='thumbnail'>
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <h3 className='title'>
-                    <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                  </h3>
-                  <p className='subtitle'>{post.frontmatter.date}</p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className='btn' to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+            <div className='podcast-post' key={post.id}>
+              <article className={`podcast-post__inner`}>
+                <HTMLContent
+                  content={post.excerpt}
+                  className='podcast-post__excerpt'
+                />
+                <Link className='btn' to={post.fields.slug}>
+                  Show Notes →
+                </Link>
               </article>
             </div>
           ))}
@@ -68,7 +49,7 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 120, format: HTML)
               id
               fields {
                 slug
@@ -77,14 +58,6 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
               }
             }
           }

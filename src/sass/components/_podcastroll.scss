@@ -1,0 +1,27 @@
+.podcastroll {
+  display: flex;
+  flex-wrap: wrap;
+  .podcast-post {
+    background-color: $color-grey-dark-3;
+    width: calc(33.3% - 2rem);
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 20px 0px $color-grey-dark;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &__inner {
+      overflow: hidden;
+      p {
+        color: $color-white;
+        margin-bottom: 1rem;
+        padding: 0 3rem;
+      }
+      a {
+        margin-left: 3rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
