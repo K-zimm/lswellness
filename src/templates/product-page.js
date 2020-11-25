@@ -17,7 +17,6 @@ export const ProductPageTemplate = ({
   content2,
   products,
   cta,
-  testimonials,
 }) => (
   <div className='productPage'>
     <div

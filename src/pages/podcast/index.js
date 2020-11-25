@@ -3,34 +3,31 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import PodcastRoll from '../../components/PodcastRoll';
 
-import HeroImg from '../../img/blog-hero.jpg';
+import PodcastThumb from '../../img/podcast-thumbnail.jpg';
 
 class PodcastIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div className='blogPage'>
-          <div
-            className='blogPage__hero'
-            style={{
-              backgroundImage: `url(${HeroImg})`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            }}
-          >
-            <h1
-              className='hero-title'
-              style={{
-                boxShadow: '0.5rem 0 0 #20bedc, -0.5rem 0 0 #20bedc',
-                backgroundColor: '#20bedc',
-                color: 'white',
-                padding: '1rem',
-              }}
-            >
-              Tell Me Your Story Podcast
-            </h1>
+        <div className='podcastPage'>
+          <div className='podcastPage__hero'>
+            <div className='podcastPage__hero--content-box'>
+              <h1 className='hero-title'>
+                Tell Me <span>Your Story</span>
+              </h1>
+              <div className='hero-subtitle'>With Lisa Strzoda</div>
+              <p>
+                Tell Me Your Story is a podcast hosted by Lisa Strzoda, an AFPA
+                Holistic Nutritionist and Co-Active Coach in training. Lisa will
+                talk to entrepreneurs, creative visionaries, activists, and
+                movers and shakers about what influences, events, and decisions
+                helped them live out their destinies. Everyone has a story worth
+                telling!
+              </p>
+            </div>
+            <img src={PodcastThumb} className='podcast-thumb' />
           </div>
-          <section className='blogPage__container'>
+          <section className='podcastPage__container'>
             <div className='content'>
               <PodcastRoll />
             </div>

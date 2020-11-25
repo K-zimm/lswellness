@@ -26,24 +26,33 @@ const Footer = class extends React.Component {
                 <Link
                   className='navbar-item'
                   activeClassName='navbar-item__active'
+                  to='/blog'
+                >
+                  Blog
+                </Link>
+                <Link
+                  className='navbar-item'
+                  activeClassName='navbar-item__active'
+                  to='/Podcast'
+                >
+                  Podcast
+                </Link>
+                <Link
+                  className='navbar-item'
+                  activeClassName='navbar-item__active'
                   to='/contact'
                 >
                   Contact
                 </Link>
-                <Link
+                <a
                   className='navbar-item'
                   activeClassName='navbar-item__active'
-                  to='/blog'
-                >
-                  News & Events
-                </Link>
-                <Link
-                  className='navbar-item'
-                  activeClassName='navbar-item__active'
-                  to='/contact/examples'
+                  href='https://lswellness.vimtoday.com/'
+                  target='_blank'
+                  rel='noreferrer'
                 >
                   Order VIM
-                </Link>
+                </a>
               </div>
             </div>
             <div className='footer-cta'>

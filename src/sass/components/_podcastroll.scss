@@ -8,9 +8,25 @@
     margin-bottom: 3rem;
     border-radius: 5px;
     box-shadow: 0 2px 20px 0px $color-grey-dark;
-    &:nth-child(3n) {
+
+    @media screen and (min-width: 1665px) {
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (max-width: 1665px) {
+      width: calc(50% - 1.5rem);
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (max-width: 1090px) {
+      width: 100%;
       margin-right: 0;
     }
+
     &__inner {
       overflow: hidden;
       p {

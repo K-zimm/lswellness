@@ -68,7 +68,7 @@ const PodcastPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate='%s | Blog'>
+          <Helmet titleTemplate='%s | Tell Me Your Story Podcast'>
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name='description'

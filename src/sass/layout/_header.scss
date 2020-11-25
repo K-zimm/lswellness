@@ -114,7 +114,7 @@
       }
       .navbar-menu {
         transition: all 0.3s ease-in-out;
-        @media screen and (max-width: 1120px) {
+        @media screen and (max-width: 1135px) {
           position: absolute;
           right: 0px;
           top: 150px;
@@ -126,13 +126,14 @@
           padding: 1rem 2rem;
           visibility: visible;
           opacity: 1;
+          z-index: 10;
         }
         .navbar-nav {
           font-size: 2rem;
           text-transform: uppercase;
           letter-spacing: 0.2rem;
           transition: all 0.3s ease-in-out;
-          @media screen and (max-width: 1220px) {
+          @media screen and (max-width: 1245px) {
             font-size: 1.8rem;
             letter-spacing: 0.1rem;
           }
@@ -143,7 +144,7 @@
             text-decoration: none;
             border-right: 2px solid $color-tertiary;
             transition: all 0.2s ease-in;
-            @media screen and (max-width: 1120px) {
+            @media screen and (max-width: 1135px) {
               display: block;
               padding: 1rem 2rem;
             }
