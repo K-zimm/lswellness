@@ -1,6 +1,6 @@
 ---
 templateKey: podcast-post
-title: Episode 1
+title: Episode 0
 date: 2020-11-23T23:13:40.907Z
 description: Tell Me Your Story is a podcast hosted by Lisa Strzoda, an AFPA
   Holistic Nutritionist and Co-Active Coach in training. Lisa will talk to
