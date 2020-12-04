@@ -113,6 +113,14 @@ const Navbar = class extends React.Component {
                   to='/podcast'
                 >
                   Podcast
+                  <div className='navbar-item__dropdown'>
+                    <Link
+                      to='/podcast/equipment-and-tools'
+                      className='navbar-item__dropdown--item'
+                    >
+                      Equipment & Tools
+                    </Link>
+                  </div>
                 </Link>
                 <Link
                   className='navbar-item'

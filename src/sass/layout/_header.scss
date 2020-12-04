@@ -4,7 +4,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    @media screen and (max-width: 1120px) {
+    @media screen and (max-width: 1135px) {
       display: none;
     }
     .telephone {
@@ -47,9 +47,12 @@
       padding: 2.5rem 3rem;
       display: flex;
       justify-content: space-between;
-      @media screen and (max-width: 1120px) {
+      @media screen and (max-width: 1135px) {
         flex-wrap: wrap;
         padding: 1rem 3rem;
+      }
+      @media screen and (max-width: 375px) {
+        padding: 1rem 1rem;
       }
       .navbar-brand {
         margin-top: -80px;
@@ -57,7 +60,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @media screen and (max-width: 1120px) {
+        @media screen and (max-width: 1135px) {
           width: 100%;
           margin-top: 0px;
           margin-bottom: 0px;
@@ -71,7 +74,7 @@
           position: relative;
           width: 3.25rem;
           margin-left: auto;
-          @media screen and (max-width: 1120px) {
+          @media screen and (max-width: 1135px) {
             display: block;
           }
           span {
@@ -139,11 +142,15 @@
           }
           .navbar-item {
             color: $color-grey-dark-3;
+            position: relative;
             display: inline-block;
             padding: 0 2rem;
             text-decoration: none;
             border-right: 2px solid $color-tertiary;
             transition: all 0.2s ease-in;
+            &:hover {
+              color: $color-tertiary-dark;
+            }
             @media screen and (max-width: 1135px) {
               display: block;
               padding: 1rem 2rem;
@@ -151,9 +158,27 @@
             &__active {
               color: $color-tertiary-dark;
             }
-            &:hover {
-              color: $color-tertiary-dark;
+            &__dropdown {
+              display: none;
+              position: absolute;
+              background-color: $color-white;
+              min-width: 230px;
+              z-index: 1;
+              &--item {
+                font-size: 1.6rem;
+                color: $color-grey-dark-3;
+                padding: 1rem 1.5rem;
+                text-decoration: none;
+                display: block;
+                transition: all 0.2s ease-in;
+                &:hover {
+                  color: $color-tertiary-dark;
+                }
+              }
             }
+          }
+          .navbar-item:hover > .navbar-item__dropdown {
+            display: block;
           }
         }
       }

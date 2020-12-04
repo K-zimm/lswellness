@@ -27,8 +27,13 @@
         font-weight: 700;
         margin-bottom: 3rem;
       }
-      p {
+      .hero-content {
         color: $color-white;
+        margin-bottom: 1.5rem;
+      }
+      .hero-link {
+        color: $color-primary;
+        font-size: 1.8rem;
       }
     }
     .podcast-thumb {
@@ -41,5 +46,32 @@
   }
   &__container {
     padding: 5rem 10%;
+  }
+}
+
+.podcastPage.tools-equipment {
+  .podcastPage__hero {
+    min-height: auto;
+    .hero-title {
+      @media screen and (max-width: 600px) {
+        font-size: 2.8rem;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    &__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-grey-dark-3;
+      padding: 1.5rem;
+      margin: 1.5rem;
+      img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
   }
 }
