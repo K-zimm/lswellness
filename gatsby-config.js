@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'LS Wellness - Lisa Strzdoda',
+    title: 'LS Wellness - Lisa Strzoda',
     description:
       'Helping those with autoimmune disease "navigate a new normal" in their lives. It can be overwhelming when you are first diagnosed, but it isn\'t the end of the world.',
   },
