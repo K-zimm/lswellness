@@ -16,6 +16,7 @@ class PodcastToolsPage extends React.Component {
                 Equipment, tools, and other resources I use and mention in my
                 Podcast!
               </h1>
+              <p className='hero-content'>Disclaimer: This page includes affiliate links to helpful resources I use in my own business. I may get a commission for purchases and trials made through the links.</p>
             </div>
           </div>
           <section className='podcastPage__container'>
