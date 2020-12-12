@@ -165,9 +165,9 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Image', name: 'image', widget: 'image' }
           - { label: 'Heading 1', name: 'heading1', widget: 'string' }
-          - { label: 'Content 1', name: 'content1', widget: 'string' }
+          - { label: 'Content 1', name: 'content1', widget: 'text' }
           - { label: 'Heading 2', name: 'heading2', widget: 'string' }
-          - { label: 'Content 2', name: 'content2', widget: 'string' }
+          - { label: 'Content 2', name: 'content2', widget: 'text' }
           - {
               label: 'Programs',
               name: 'products',
