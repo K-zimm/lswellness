@@ -10,7 +10,7 @@ const AboutPagePreview = ({ entry, getAsset }) => {
       <AboutPageTemplate
         title={data.title}
         headerImage={getAsset(data.headerImage)}
-        storyImage={getAsset(data.storyImage)}
+        storyImage={data.storyImage}
         content={data.body}
       />
     );
