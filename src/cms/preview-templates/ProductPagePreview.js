@@ -18,7 +18,7 @@ const ProductPagePreview = ({ entry, getAsset }) => {
     <ProductPageTemplate
       image = {getAsset(data.image)}
       title = {data.title}
-      heading1 = {data.title}
+      heading1 = {data.heading1}
       content1 = {data.content1}
       heading2 = {data.heading2}
       content2 = {data.content2}
