@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { AboutPageTemplate } from "../../templates/about-page";
 
-const AboutPagePreview = ({ entry, widgetFor }) => {
+const AboutPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
@@ -11,7 +11,7 @@ const AboutPagePreview = ({ entry, widgetFor }) => {
         title={data.title}
         headerImage={data.headerImage}
         storyImage={data.storyImage}
-        content={widgetFor("body")}
+        content={data.body}
       />
     );
   } else {
