@@ -5,6 +5,16 @@ module.exports = {
       'Helping those with autoimmune disease "navigate a new normal" in their lives. It can be overwhelming when you are first diagnosed, but it isn\'t the end of the world.',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'G-877R5LXF14',
+        head: true,
+        respectDNT: true,
+        pageTransitionDelay: 0,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
