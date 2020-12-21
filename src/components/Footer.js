@@ -33,7 +33,7 @@ const Footer = class extends React.Component {
                 <Link
                   className='navbar-item'
                   activeClassName='navbar-item__active'
-                  to='/Podcast'
+                  to='/podcast'
                 >
                   Podcast
                 </Link>
