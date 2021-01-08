@@ -2,11 +2,16 @@
 templateKey: podcast-post
 title: "Aaron Howard: How Yoga Helped Me Heal from a Serious Injury"
 date: 2020-12-15T01:43:51.840Z
-description: "<iframe
-  src='https://share.zencast.fm/embed/episode/3cf4df77-1e79-4062-88d2-f2da82762\
-  b7a' width='100%' height='190' frameborder='0' scrolling='no' seamless='true'
-  style='width: 100vw; max-width:100%; height:190px;'></iframe>"
+description: Aaron and I chat about how yoga helped him heal from a serious
+  injury, why he became a nurse, how he started Community Yoga and why you
+  should update your business goals.
 ---
+<iframe src='https://share.zencast.fm/embed/episode/3cf4df77-1e79-4062-88d2-f2da82762b7a' width='100%' height='190' frameborder='0' scrolling='no' seamless='true' style='width: 100vw; max-width:100%; height:190px;'></iframe>
+
+
+
+
+
 **Aaron Howard: How yoga helped me heal from a serious injury** 
 
 1:21 	Aaron talks about an injury that affected his life.
@@ -26,8 +31,6 @@ description: "<iframe
 16:09	Why Aaron created his “Community Yoga” events.
 
 20:58	Socially distant community yoga
-
-
 
 22:19	How yoga helps with stress, loss, and the pandemic.
 
