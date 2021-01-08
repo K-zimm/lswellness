@@ -3,11 +3,12 @@ templateKey: podcast-post
 title: "Chiropractic medicine, birth stories, and internalized misogyny: An
   Interview with Dr. Freda Tyson"
 date: 2021-01-08T01:38:10.991Z
-description: "<iframe
-  src='https://share.zencast.fm/embed/episode/c4955c83-8b15-4ca0-b0ab-788cff11e\
-  906' width='100%' height='190' frameborder='0' scrolling='no' seamless='true'
-  style='width: 100vw; max-width:100%; height:190px;'></iframe>"
+description: This week, Dr. Freda Tyson, and Lisa Strzoda cover Chiropractic
+  medicine, pregnancy, birth stories, internalized misogyny, violence against
+  women, and the creation of Feminist Manifesta.
 ---
+<iframe src='https://share.zencast.fm/embed/episode/c4955c83-8b15-4ca0-b0ab-788cff11e906' width='100%' height='190' frameborder='0' scrolling='no' seamless='true' style='width: 100vw; max-width:100%; height:190px;'></iframe>
+
 This week, Dr. Freda Tyson, and Lisa Strzoda cover Chiropractic medicine, pregnancy, birth stories, internalized misogyny, and the creation of Feminist Manifesta.
 
 A full transcript of this episode can be found [here](https://drive.google.com/file/d/1hFErqreuHB6v40yXGllH1FPVxvRhzIvV/view?usp=sharing).
