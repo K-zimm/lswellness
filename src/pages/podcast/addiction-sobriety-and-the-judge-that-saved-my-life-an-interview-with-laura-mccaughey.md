@@ -52,3 +52,9 @@ Show Notes
 - - -
 
 This podcast is hosted by [ZenCast.fm](https://wwww.zencast.fm)
+
+```
+
+```
+
+[](https://app.mailerlite.com/forms/view/4803140)
