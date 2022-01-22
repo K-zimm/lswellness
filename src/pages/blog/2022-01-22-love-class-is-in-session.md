@@ -5,7 +5,7 @@ date: 2022-01-22T04:41:35.064Z
 description: "Love Class is a 3 hour workshop for those 18 and over, exploring
   how love motivates us in life, how it deepens our relationships, and how we
   can show up in life when we begin with a foundation of love. "
-featuredpost: false
+featuredpost: true
 featuredimage: /img/pexels-fauxels-3184419.jpg
 tags:
   - "#love #inspiration #togetherness #hope #potential #risk #vulnerability"
