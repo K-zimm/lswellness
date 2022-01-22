@@ -7,7 +7,7 @@ description: Personal trainer and founder of LIVEFIT WITH LUPUS, Lisa Lynn
   live with Lupus, how to get out of victim mode, and live a fulfilling life
   with autoimmune disease.
 ---
-<div id="buzzsprout-player-9818826"></div><script src="https://www.buzzsprout.com/1903968/9818826-how-lisa-lynn-eveleth-lives-a-full-fit-and-active-life-with-lupus.js?container_id=buzzsprout-player-9818826&player=small" type="text/javascript" charset="utf-8"></script>
+<iframe src="https://www.buzzsprout.com/1903968/9818826-how-lisa-lynn-eveleth-lives-a-full-fit-and-active-life-with-lupus?client_source=small_player&iframe=true" loading="lazy" width="100%" height="200" frameborder="0" scrolling="no" title='The Holistic Life Coach , How Lisa Lynn Eveleth lives a full, fit, and active life with lupus. '></iframe>
 
 Personal trainer and founder of LIVEFIT WITH LUPUS, Lisa Lynn Eveleth, and I sit down and chat about the treatments that have helped her live with Lupus, how to get out of victim mode, and live a fulfilling life with autoimmune disease.
 
